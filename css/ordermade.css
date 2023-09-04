@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+@media(max-width:768px) {
+    .pc_only {
+        display: none;
+    }
+}
+
+@media(min-width:768px) {
+    .sp_only {
+        display: none;
+    }
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.kanseiImage {
+    padding: 10px;
+    font-size: 14px;
+    color: #737373;
+    font-weight: normal;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.logo {
+    width: 242px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media(max-width:768px) {
+    .logo {
+        width: 150px;
+    }
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+@media(max-width:768px) {
+    .wrapper {
+        display: block;
+    }
+}
+
+.item {
+    position: relative;
+    width: 50%;
+    height: 600px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    background: #FFFFFF;
+}
+
+.item svg {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 25px;
+    color: #a3a3a3;
+}
+
+@media(max-width:768px) {
+    .item {
+        width: 100%;
+        height: auto;
+        margin: 0px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .1);
+    }
+}
+
+.price {
+    line-height: 100px;
+    font-size: 20px;
+}
+
+.price span {
+    font-size: 25px;
+}
+
+.sp_price {
+    display: none;
+}
+
+@media(max-width:768px) {
+    .sp_price {
+        display: block;
+        color: #737373;
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+.orderSelect {
+    width: 45%;
+    margin: 10px;
+}
+
+@media(max-width:768px) {
+    .orderSelect {
+        margin: 0px;
+        width: 100%;
+    }
+}
+
+.orderSelect h2 {
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+@media(max-width:768px) {
+    .orderSelect h2 {
+        font-size: 20px;
+    }
+}
+
+.orderSelect h3 {
+    font-weight: normal;
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.step {
+    color: #a3a3a3;
+    margin-right: 15px;
+}
+
+.horizontal_scroll {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 画面幅が768px以上の場合、横スクロール */
+@media screen and (max-width: 768px) {
+
+    .horizontal_scroll {
+        overflow-x: scroll;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        display: -ms-flexbox;
+    }
+}
+
+.horizontal_scroll>li {
+    position: relative;
+    text-align: center;
+    width: 37%;
+    margin: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.horizontal_scroll li img {
+    padding-top: 10px;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .horizontal_scroll>li {
+        width: 100%;
+        position: relative;
+        margin: 0px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .horizontal_scroll li img {
+        width: 180px;
+    }
+
+    .cave img {
+        width: 250px !important;
+    }
+}
+
+.horizontal_scroll span {
+    line-height: 25px;
+}
+
+.selects {
+    padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .selects {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+.selected {
+    border: solid #a3a3a3 3px;
+}
+
+.selected:before {
+    content: "選択中";
+    position: absolute;
+    background-color: #a3a3a3;
+    top: 0px;
+    left: 0px;
+    color: white;
+    padding: 3px;
+    align-content: left;
+}
+
+.ex {
+    text-align: left;
+    color: #737373;
+}
+
+@media screen and (max-width: 768px) {
+    .ex {
+        font-size: 12px;
+    }
+}
+
+.checkout {
+    padding: 30px;
+    background: #EEEEEE;
+}
+
+.checkout h3 {
+    margin-bottom: 20px;
+}
+
+.status {
+    line-height: 30px;
+}
+
+.buy-btn {
+    background-color: #3E2929;
+    color: #FFFFFF !important;
+    width: 100%;
+    max-width: 320px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+
+.buy-btn:hover {
+    opacity: 0.7;
+    transition: all 0.2s ease;
+}
+
+.buy-btn::before {
+    font-size: 18px;
+    top: 50%;
+    left: 20px;
+    font-weight: 600;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+/* スケルトンローディング */
+.skelton {
+    background-color: #F4F4F4;
+}
+
+/*タブのスタイル*/
+.tabs {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .tabs {
+        display: none;
+        margin-bottom: 0px;
+    }
+}
+
+.tabs li {
+    width: calc(100%/6);
+    height: 50px;
+    background-color: #e5e5e5;
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.tabs li:hover {
+    opacity: 0.75;
+}
+
+/*タブ切り替えPCのみ*/
+.materialComponent,
+.widthComponent,
+.thickComponent,
+.caveComponent,
+.edgeComponent,
+.typeComponent {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+    .materialComponent,
+    .widthComponent,
+    .thickComponent,
+    .caveComponent,
+    .edgeComponent,
+    .typeComponent {
+        display: block;
+    }
+}
+
+/*選択されているタブ*/
+.tag_active {
+    background-color: #3E2929;
+    color: #ffffff;
+}

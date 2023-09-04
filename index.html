@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>無題ドキュメント</title>
+
+	<link rel="stylesheet" href="css/ordermade.css">
+
+</head>
+
+<body>
+	<header>
+		<img src="https://www.by-the-sea.info/images/BYTHESEA_logo.webp" class="logo" alt="バイザシーロゴ">
+	</header>
+	<main class="wrapper">
+		<section class="item">
+			<div>
+				<div class="itemComponent"></div>
+				<div class="checkout pc_only">
+					<h3>商品確認</h3>
+					<div class="stateComponent"></div>
+				</div>
+			</div>
+		</section>
+		<section class="orderSelect">
+			<ul class="tabs">
+				<li class="materialComponentBtn" onclick="tab('.materialComponent')">地金</li>
+				<li class="widthComponentBtn" onclick="tab('.widthComponent')">幅</li>
+				<li class="thickComponentBtn" onclick="tab('.thickComponent')">厚み</li>
+				<li class="caveComponentBtn" onclick="tab('.caveComponent')">彫り</li>
+				<li class="edgeComponentBtn" onclick="tab('.edgeComponent')">エッジ</li>
+				<li class="typeComponentBtn" onclick="tab('.typeComponent')">形状</li>
+			</ul>
+			<div class="materialComponent">
+			</div>
+			<div class="widthComponent">
+			</div>
+			<div class="thickComponent">
+			</div>
+			<div class="caveComponent">
+			</div>
+			<div class="edgeComponent">
+			</div>
+			<div class="typeComponent">
+			</div>
+
+			<div class="checkout sp_only">
+				<h2>商品確認</h2>
+				<div class="sp_stateComponent"></div>
+				<div align="center">
+					<a href="https://www.by-the-sea.info/aboutus.html" class="buy-btn">
+						購入ページへ
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+	<br><br><br><br><br><br><br><br><br><br>
+	<footer></footer>
+	<script type="text/javascript" src="js/ordermade.js"></script>
+	<script type="text/javascript" src="js/component.js"></script>
+	<script type="text/javascript" src="js/tab.js"></script>
+</body>
+
+</html>
