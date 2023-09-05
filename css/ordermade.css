@@ -121,6 +121,7 @@ header {
 .orderSelect {
     width: 45%;
     margin: 10px;
+    font-size: 14px;
 }
 
 @media(max-width:768px) {
@@ -257,6 +258,33 @@ header {
     line-height: 30px;
 }
 
+.next_step {
+    color: #000000;
+    background-color: #FFFFFF;
+    border: solid 1px;
+    width: 100%;
+    max-width: 250px;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+}
+
+@media only screen and (max-width:414px) {
+    .next_step {
+        background-color: #FFFFFF;
+        border: solid 1px;
+        width: 90%;
+        padding: 10px;
+        margin: 10px;
+        display: inline-block;
+        position: relative;
+    }
+}
+
+
 .buy-btn {
     background-color: #3E2929;
     color: #FFFFFF !important;
@@ -279,6 +307,17 @@ header {
     top: 50%;
     left: 20px;
     font-weight: 600;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+.u-icon--arrow-right:before {
+    content: "\f105";
+    font-family: FontAwesome;
+    font-size: 18px;
+    top: 50%;
+    right: 15px;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     position: absolute;
