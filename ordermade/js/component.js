@@ -136,7 +136,7 @@ const Component = class {
     disabledComponent(url, content, error) {
         return (`
             <li  ` + this.buttonSelected(url) + `>
-                <img src="https://www.by-the-sea.info/images/ordermade/`+ this.buttonImage(content) + `.webp" style="opacity: 0.3;">
+                <img src="https://www.by-the-sea.info/images/ordermade/`+ this.buttonImage(content) + `.webp" style="opacity: 0.2;">
                 <p>`+ content + `</p>
                 <p class="ex">`+ this.subContent(content) + `</p>
                 <span style="color: #FF0000;">`+ error + `</span>

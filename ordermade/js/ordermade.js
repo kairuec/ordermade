@@ -1,4 +1,4 @@
-const jsonUrl = "js/list.json";
+const jsonUrl = "ordermade/js/list.json";
 
 const getJson = (itemUrl) => {
     fetch(jsonUrl)
