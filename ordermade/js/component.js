@@ -104,7 +104,7 @@ const Component = class {
                                     </tr>
                                 </tbody>
                             </table>
-                            `+ this.buyComponent() + `
+                            <span class="pc_only"><br><br>`+ this.buyComponent() + `</span>
                             `,
                     }
             }
