@@ -36,6 +36,7 @@ const Component = class {
                 <li>形状：` + this.state.type + `</li>
             </ul>
             <p class="price"><span>` + Number(this.state.price).toLocaleString() + `</span>円（税込）</p>
+            <p style="font-size:12px; margin-bottom:30px;">※完成イメージは合成画像のため、実際の商品とは色合い・彫り・デザインが多少異なる場合がございます。予めご了承下さい。</p>
             `);
     }
 
