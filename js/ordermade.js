@@ -56,7 +56,7 @@ function formatJSON(json, itemUrl) {
             }
         });
         //ボタンをまとめる
-        return new Component().joinComponent(materialList, 'material');
+        return new Component(state).joinComponent(materialList, 'material');
     }
 
     //形状に関する処理
@@ -74,7 +74,7 @@ function formatJSON(json, itemUrl) {
             );
         });
         //ボタンをまとめる
-        return new Component().joinComponent(typeList, 'type');
+        return new Component(state).joinComponent(typeList, 'type');
     }
 
     //幅に関する処理
@@ -123,7 +123,7 @@ function formatJSON(json, itemUrl) {
             }
         });
         //ボタンをまとめる
-        return new Component().joinComponent(widthList, 'width');
+        return new Component(state).joinComponent(widthList, 'width');
     }
 
 
@@ -151,7 +151,7 @@ function formatJSON(json, itemUrl) {
             }
         });
         //ボタンをまとめる
-        return new Component().joinComponent(thickList, 'thick');
+        return new Component(state).joinComponent(thickList, 'thick');
     }
 
     //彫りに関する処理
@@ -169,7 +169,7 @@ function formatJSON(json, itemUrl) {
             );
         });
         //ボタンをまとめる
-        return new Component().joinComponent(caveList, 'cave');
+        return new Component(state).joinComponent(caveList, 'cave');
     }
 
     //縁に関する処理
@@ -210,7 +210,7 @@ function formatJSON(json, itemUrl) {
             }
         });
         //ボタンをまとめる
-        return new Component().joinComponent(edgeList, 'edge');
+        return new Component(state).joinComponent(edgeList, 'edge');
     }
 
     //現在の商品のステータスをページ上に反映
@@ -223,4 +223,23 @@ function formatJSON(json, itemUrl) {
     document.querySelector(".edgeComponent").innerHTML = edgeComponent(edges);
     document.querySelector(".thickComponent").innerHTML = thickComponent(thicks);
     document.querySelector(".typeComponent").innerHTML = typeComponent(types);
+    document.querySelector(".buyComponent").innerHTML = new Component(state).buyComponent();
+
+
+    //別のパターンのリング画像のプリロード
+    //表示中のボタンの遷移先の品番をまとめる
+    const images = materials.map(url => url["url"]).concat(
+        widths.map(url => url["url"]),
+        thicks.map(url => url["url"]),
+        caves.map(url => url["url"]),
+        edges.map(url => url["url"]),
+        types.map(url => url["url"]),
+    );
+    const preLoad = (images) => {
+        for (i = 0; i < images.length; i++) {
+            let img = document.createElement('img');
+            img.src = 'https://www.by-the-sea.info/images/item/ordermade/' + images[i] + '.webp';
+        }
+    }
+    preLoad(images);
 }

@@ -12,32 +12,16 @@ const Component = class {
     //現在のリングの画像と値段
     itemComponent() {
         return (`
-            <h2 class="kanseiImage">完成イメージ</h2>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
-            </svg>
-            <img src="https://www.by-the-sea.info/images/item/` + this.state.url + `.jpg" height="250px" class="sp_only">
-            <img src="https://www.by-the-sea.info/images/item/` + this.state.url + `.jpg" width="100%" class="pc_only">
-            <p class="sp_price"><span>` + Number(this.state.price).toLocaleString() + `</span>円(税込)</p>
-            `);
-    }
-
-    //選択中
-    selected() {
-
-        return (`
-            <ul class="status">
-                <li>地金：` + this.state.material + `</li>
-                <li>幅：` + this.state.width + `</li>
-                <li>厚み：` + this.state.thick + `</li>
-                <li>彫り：` + this.state.cave + `</li>
-                <li>エッジ：` + this.state.edge + `</li>
-                <li>形状：` + this.state.type + `</li>
-            </ul>
-            <p class="price"><span>` + Number(this.state.price).toLocaleString() + `</span>円（税込）</p>
-            `);
+                <h2 class="kanseiImage">完成イメージ</h2>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                </svg>
+                <img src="https://www.by-the-sea.info/images/item/ordermade/` + this.state.url + `.webp" height="250px" class="sp_only">
+                <img src="https://www.by-the-sea.info/images/item/ordermade/` + this.state.url + `.webp" width="100%" class="pc_only">
+                <p class="sp_price"><span>` + Number(this.state.price).toLocaleString() + `</span>円(税込)</p>
+                `);
     }
 
     //現在の選択中のリングの情報
@@ -120,6 +104,7 @@ const Component = class {
                                     </tr>
                                 </tbody>
                             </table>
+                            `+ this.buyComponent() + `
                             `,
                     }
             }
@@ -138,9 +123,10 @@ const Component = class {
     //選択するボタン
     buttonComponent(url, content, difference) {
         return (`
-                <li onclick="change('`+ url + `')" ` + this.buttonSelected(url) + `>
+                <li onclick="change('`+ url + `')" ` + this.buttonSelected(url) + ` class="active">
                     <img src="https://www.by-the-sea.info/images/ordermade/`+ this.buttonImage(content) + `.webp">
                     <p>`+ content + `</p>
+                    <p class="ex">`+ this.subContent(content) + `</p>
                     <span>`+ difference + `</span>
                 </li>
                 `);
@@ -150,8 +136,9 @@ const Component = class {
     disabledComponent(url, content, error) {
         return (`
             <li  ` + this.buttonSelected(url) + `>
-                <img src="https://www.by-the-sea.info/images/ordermade/`+ this.buttonImage(content) + `.webp">
+                <img src="https://www.by-the-sea.info/images/ordermade/`+ this.buttonImage(content) + `.webp" style="opacity: 0.3;">
                 <p>`+ content + `</p>
+                <p class="ex">`+ this.subContent(content) + `</p>
                 <span style="color: #FF0000;">`+ error + `</span>
             </li>
         `);
@@ -221,4 +208,46 @@ const Component = class {
         }
     }
 
+    //ボタンのサブコンテンツ
+    subContent(content) {
+        switch (content) {
+            case 'フラット':
+                return '表面が平らなタイプ。厚みが強調されより重厚で立体的な印象に仕上がります。';
+            case 'バレル':
+                return '付け心地のよい丸みを帯びた樽型。フラットより地金量が少ないためよりリーズナブルです。';
+            case 'スクロール':
+                return '永遠に途切れることのない愛を意味します。';
+            case 'マイレリーフ':
+                return '大切な人との絆を意味する神聖な葉のモチーフです。';
+            case 'マイレ＆カレイキニ':
+                return 'スクロールとマイレリーフの両方が楽しめます。';
+            case 'プルメリア':
+                return '大切な人の幸せを願う意味が込められております。';
+            case 'カレイキニ':
+                return '力強い波を表現することから「パワー」を意味します。';
+            case 'カットアウト':
+                return '柄に沿って縁をカットしており彫りが強調されます。';
+            case 'プレーン':
+                return '両サイドに柄が入っていないラインが入ります。';
+            case 'ダイヤモンドカット':
+                return '両サイドに細かくカットを施します。';
+            case 'コインエッジ':
+                return '両サイドに硬貨の縁のような溝状の模様を施します。';
+            case 'ノーエッジ':
+                return 'エッジに加工を施さない、柄のみのシンプルなデザイン';
+            default:
+                return '';
+        }
+    }
+
+    //購入ページのボタン
+    buyComponent() {
+        return (`
+                <div align="center">
+                    <a href="`+ this.site() + `" class="buy-btn">
+                        購入ページへ
+                    </a>
+                </div>
+            `);
+    }
 }

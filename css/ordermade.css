@@ -11,6 +11,24 @@ li {
     list-style: none;
 }
 
+svg {
+    display: none;
+}
+
+footer {
+    background: #333333;
+    color: #FFFFFF;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    line-height: 30px;
+    font-size: 12px;
+    text-align: center;
+}
+
+footer a {
+    color: #FFFFFF;
+}
+
 @media(max-width:768px) {
     .pc_only {
         display: none;
@@ -40,7 +58,7 @@ header {
 }
 
 .logo {
-    width: 242px;
+    width: 200px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -68,7 +86,6 @@ header {
 .item {
     position: relative;
     width: 50%;
-    height: 600px;
     margin: 10px;
     display: flex;
     justify-content: center;
@@ -172,7 +189,7 @@ header {
     }
 }
 
-.horizontal_scroll>li {
+.horizontal_scroll li {
     position: relative;
     text-align: center;
     width: 37%;
@@ -181,17 +198,26 @@ header {
     padding-right: 15px;
 }
 
+.active {
+    cursor: pointer;
+}
+
+.active:hover {
+    opacity: 0.8;
+}
+
 .horizontal_scroll li img {
     padding-top: 10px;
     width: 100%;
 }
+
+
 
 @media screen and (max-width: 768px) {
     .horizontal_scroll>li {
         width: 100%;
         position: relative;
         margin: 0px;
-        font-size: 12px;
         text-align: center;
     }
 
@@ -206,6 +232,7 @@ header {
 
 .horizontal_scroll span {
     line-height: 25px;
+    font-size: 12px;
 }
 
 .selects {
@@ -272,18 +299,11 @@ header {
     cursor: pointer;
 }
 
-@media only screen and (max-width:414px) {
+@media only screen and (max-width:769px) {
     .next_step {
-        background-color: #FFFFFF;
-        border: solid 1px;
-        width: 90%;
-        padding: 10px;
-        margin: 10px;
-        display: inline-block;
-        position: relative;
+        display: none;
     }
 }
-
 
 .buy-btn {
     background-color: #3E2929;
