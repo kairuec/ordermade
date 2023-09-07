@@ -226,20 +226,21 @@ function formatJSON(json, itemUrl) {
     document.querySelector(".buyComponent").innerHTML = new Component(state).buyComponent();
 
 
+    //※重くなるため未使用
     //別のパターンのリング画像のプリロード
     //表示中のボタンの遷移先の品番をまとめる
-    const images = materials.map(url => url["url"]).concat(
-        widths.map(url => url["url"]),
-        thicks.map(url => url["url"]),
-        caves.map(url => url["url"]),
-        edges.map(url => url["url"]),
-        types.map(url => url["url"]),
-    );
-    const preLoad = (images) => {
-        for (i = 0; i < images.length; i++) {
-            let img = document.createElement('img');
-            img.src = 'https://www.by-the-sea.info/images/item/ordermade/' + images[i] + '.webp';
-        }
-    }
-    preLoad(images);
+    // const images = materials.map(url => url["url"]).concat(
+    //     widths.map(url => url["url"]),
+    //     thicks.map(url => url["url"]),
+    //     caves.map(url => url["url"]),
+    //     edges.map(url => url["url"]),
+    //     types.map(url => url["url"]),
+    // );
+    // const preLoad = (images) => {
+    //     for (i = 0; i < images.length; i++) {
+    //         let img = document.createElement('img');
+    //         img.src = 'https://www.by-the-sea.info/images/item/ordermade/' + images[i] + '.webp';
+    //     }
+    // }
+    // preLoad(images);
 }
