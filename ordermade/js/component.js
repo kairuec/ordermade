@@ -117,7 +117,6 @@ const Component = class {
             ` + tubContent(string).content + `
         </div>
         `);
-
     }
 
 
@@ -125,7 +124,7 @@ const Component = class {
     buttonComponent(url, content, difference) {
         return (`
                 <li onclick="change('`+ url + `')" ` + this.buttonSelected(url) + ` class="active">
-                    <img src="ordermade/images/button_skelton.jpg" data-src="https://www.by-the-sea.info/images/ordermade/`+ this.buttonImage(content) + `.webp" class="lazyload">
+                    <img src="https://www.by-the-sea.info/images/ordermade/`+ this.buttonImage(content) + `.webp">
                     <p>`+ content + `</p>
                     <p class="ex">`+ this.subContent(content) + `</p>
                     <span>`+ difference + `</span>
@@ -137,7 +136,7 @@ const Component = class {
     disabledComponent(url, content, error) {
         return (`
             <li  ` + this.buttonSelected(url) + `>
-                <img src="ordermade/images/button_skelton.jpg" data-src="https://www.by-the-sea.info/images/ordermade/`+ this.buttonImage(content) + `.webp" style="opacity: 0.2;" class="lazyload">
+                <img src="https://www.by-the-sea.info/images/ordermade/`+ this.buttonImage(content) + `.webp" style="opacity: 0.2;">
                 <p>`+ content + `</p>
                 <p class="ex">`+ this.subContent(content) + `</p>
                 <span style="color: #FF0000;">`+ error + `</span>
