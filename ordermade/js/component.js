@@ -18,8 +18,8 @@ const Component = class {
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
                 </svg>
-                <img src="https://www.by-the-sea.info/images/item/ordermade/` + this.state.url + `.webp" height="250px" class="sp_only">
-                <img src="https://www.by-the-sea.info/images/item/ordermade/` + this.state.url + `.webp" width="100%" class="pc_only">
+                <img src="ordermade/images/item_lording.gif" data-src="https://www.by-the-sea.info/images/item/ordermade/` + this.state.url + `.webp" height="250px" class="lazyload sp_only">
+                <img src="ordermade/images/item_lording.gif" data-src="https://www.by-the-sea.info/images/item/ordermade/` + this.state.url + `.webp" width="100%" class="lazyload pc_only">
                 <p class="sp_price"><span>` + Number(this.state.price).toLocaleString() + `</span>円(税込)</p>
                 `);
     }
@@ -125,7 +125,7 @@ const Component = class {
     buttonComponent(url, content, difference) {
         return (`
                 <li onclick="change('`+ url + `')" ` + this.buttonSelected(url) + ` class="active">
-                    <img src="https://www.by-the-sea.info/images/ordermade/`+ this.buttonImage(content) + `.webp">
+                    <img src="ordermade/images/button_skelton.jpg" data-src="https://www.by-the-sea.info/images/ordermade/`+ this.buttonImage(content) + `.webp" class="lazyload">
                     <p>`+ content + `</p>
                     <p class="ex">`+ this.subContent(content) + `</p>
                     <span>`+ difference + `</span>
@@ -137,7 +137,7 @@ const Component = class {
     disabledComponent(url, content, error) {
         return (`
             <li  ` + this.buttonSelected(url) + `>
-                <img src="https://www.by-the-sea.info/images/ordermade/`+ this.buttonImage(content) + `.webp" style="opacity: 0.2;">
+                <img src="ordermade/images/button_skelton.jpg" data-src="https://www.by-the-sea.info/images/ordermade/`+ this.buttonImage(content) + `.webp" style="opacity: 0.2;" class="lazyload">
                 <p>`+ content + `</p>
                 <p class="ex">`+ this.subContent(content) + `</p>
                 <span style="color: #FF0000;">`+ error + `</span>
