@@ -6,7 +6,7 @@ const Component = class {
 
     //リンク先のサイト
     site() {
-        return 'https://www.by-the-sea.info/SHOP/' + this.state.url + '.html';
+        return 'https://item.rakuten.co.jp/million-bell/' + this.state.url + '/';
     }
 
     //現在のリングの画像と値段
