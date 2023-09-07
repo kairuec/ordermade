@@ -37,10 +37,12 @@ function formatJSON(json, itemUrl) {
     const materials = json.filter(function (data) {
         return data.type == state.type && data.width == state.width && data.thick == state.thick && data.cave == state.cave && data.edge == state.edge;
     });
+
     //バリデーション＆コンポーネント呼び出し
     const materialComponent = (meterials) => {
         const materialList = meterials.map((material) => {
             if (material.material == 'シルバー925' && material.thick == '厚み1.2mm') {
+                //選択できないボタンのhtmlコンポーネント生成
                 return new Component(state).disabledComponent(
                     material.url,
                     material.material,
@@ -48,6 +50,7 @@ function formatJSON(json, itemUrl) {
                 );
             }
             else {
+                //選択可能なボタンのhtmlコンポーネント生成
                 return new Component(state).buttonComponent(
                     material.url,
                     material.material,
